@@ -6,8 +6,8 @@ import cors from "cors";
 import rateLimeter from "./middleware/rateLimiter.js";
 import path from "path";
 
-dotenv.config();
-
+dotenv.config();   
+  
 const port = process.env.PORT || 8080;
 const app = express();
 const __dirname = path.resolve();
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // ratelimiter middleware
-app.use(rateLimeter)
+app.use(rateLimeter)     
 
 app.use("/api/notes", notesRoutes);
 
